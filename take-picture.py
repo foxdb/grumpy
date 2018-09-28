@@ -19,6 +19,8 @@ img = cam.get_image()
 pygame.image.save(img, filename)
 pygame.camera.quit()
 
+print "Nice shot!!"
+
 try:
     data = open(filename, 'rb')
     s3.Bucket(BUCKET_NAME).put_object(Key=FILE_PREFIX +
