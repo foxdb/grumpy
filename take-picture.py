@@ -1,8 +1,9 @@
 import os
+import subprocess
+from datetime import datetime
 
 import pygame.camera
 import pygame.image
-from datetime import datetime
 import boto3
 
 s3 = boto3.resource('s3')
@@ -11,11 +12,11 @@ BUCKET_NAME = 'grumpy-ben'
 FILE_PREFIX = 'grumpy'
 PICTURES_DIRECTORY = '/home/ben/.gitshots'
 
-print os.getcwd()
-# TODO: name of branch in filename
+branch_name = subprocess.check_output(
+    ['git', 'status']).split('\n')[0].replace('On branch ', '').replace('/', '')
 
 filename = PICTURES_DIRECTORY + '/' + \
-    datetime.now().strftime('%Y%m%d_%H-%M-%S') + '.jpg'
+    datetime.now().strftime('%Y%m%d_%H-%M-%S') + '-' + branch_name + '.jpg'
 
 pygame.camera.init()
 cam = pygame.camera.Camera(pygame.camera.list_cameras()[0])
