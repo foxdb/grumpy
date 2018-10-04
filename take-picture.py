@@ -9,8 +9,13 @@ s3 = boto3.resource('s3')
 
 BUCKET_NAME = 'grumpy-ben'
 FILE_PREFIX = 'grumpy'
+PICTURES_DIRECTORY = '/home/ben/.gitshots'
 
-filename = datetime.now().strftime('%Y%m%d_%H-%M-%S') + '.jpg'
+print os.getcwd()
+# TODO: name of branch in filename
+
+filename = PICTURES_DIRECTORY + '/' + \
+    datetime.now().strftime('%Y%m%d_%H-%M-%S') + '.jpg'
 
 pygame.camera.init()
 cam = pygame.camera.Camera(pygame.camera.list_cameras()[0])
@@ -21,10 +26,12 @@ pygame.camera.quit()
 
 print "Nice shot!!"
 
-try:
-    data = open(filename, 'rb')
-    s3.Bucket(BUCKET_NAME).put_object(Key=FILE_PREFIX +
-                                      '/' + filename, Body=data)
-    os.remove(filename)
-except:
-    print 'Upload issue!'
+# try:
+data = open(filename, 'rb')
+
+# S3 upload for reference
+# s3.Bucket(BUCKET_NAME).put_object(Key=FILE_PREFIX +
+#                                   '/' + filename, Body=data)
+# os.remove(filename)
+# except:
+#     print 'Upload issue!'
