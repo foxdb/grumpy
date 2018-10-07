@@ -2,15 +2,21 @@
 
 ## Setup
 
-### Create a hooks directory
+### install python requirements
+
+`sudo pip install -r requirements.txt`
+
+### Create a pre-commit hook and configure git
+
+- create a hooks directory
 
 `mkdir -p ~/.git-template/hooks`
 
-### Create a pre-commit file in that directory and feed it the commit-hook
+- create a pre-commit file in that directory
 
 `touch ~/.git-template/hooks/pre-commit`
 
-### Put that in the pre-commit file
+- put the code below in the pre-commit file
 
 Point to take-picture.py in this repository
 
@@ -19,12 +25,14 @@ Point to take-picture.py in this repository
 python ~/grumpy/take-picture.py
 ```
 
-### Make the file executable
+- make the file executable
 
-```bash
-chmod o+x ~/.git-templates/hooks/pre-commit
-```
+`chmod o+x ~/.git-templates/hooks/pre-commit`
 
-### “activate” your init dir
+- “activate” your init dir
 
-git config --global init.templatedir ‘~/.git_template’
+`git config --global init.templatedir ‘~/.git_template’`
+
+## TODO
+
+- Configuration variables in separate file (PICTURES_DIRECTORY, BUCKET_NAME etc...)
