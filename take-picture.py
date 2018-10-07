@@ -6,11 +6,13 @@ import pygame.camera
 import pygame.image
 import boto3
 
-s3 = boto3.resource('s3')
+# s3 = boto3.resource('s3')
 
-BUCKET_NAME = 'grumpy-ben'
-FILE_PREFIX = 'grumpy'
 PICTURES_DIRECTORY = '/home/ben/.gitshots'
+
+# S3 only params
+# BUCKET_NAME = 'grumpy-ben'
+# FILE_PREFIX = 'grumpy'
 
 branch_name = subprocess.check_output(
     ['git', 'status']).split('\n')[0].replace('On branch ', '').replace('/', '')
