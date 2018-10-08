@@ -23,15 +23,14 @@ adapt the path to `take-picture.py` if necessary
 
 - make the file executable
 
-`chmod o+x ~/.git-templates/hooks/pre-commit`
+`chmod o+x ~/.git-template/hooks/pre-commit`
 
 - "activate" your init dir
 
 `git config --global init.templatedir "~/.git_template"`
 
-### adapt configuration values
-
-- in `take-picture.py`, set PICTURES_DIRECTORY to the local folder of your choice
+- adapt your PICTURES_DIRECTORY: in `take-picture.py`, set PICTURES_DIRECTORY to the local folder of your choice
+- the git hook will kick in automatically in your new repos. For the existing ones, running `git init` will update the configuration.
 
 ## uploads to s3
 
