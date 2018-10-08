@@ -2,24 +2,21 @@
 
 ## Setup
 
-### install python requirements
+- install python requirements
 
 `sudo pip install -r requirements.txt`
 
-### Create a pre-commit hook and configure git
+- create a pre-commit hook and configure git
 
 `mkdir -p ~/.git-template/hooks`
-
 `touch ~/.git-template/hooks/pre-commit`
 
-- put the code below in the pre-commit file
+- put the code below in the pre-commit file (adapt the path to `take-picture.py` if necessary)
 
 ```bash
 #!/bin/bash
 python ~/grumpy/take-picture.py
 ```
-
-adapt the path to `take-picture.py` if necessary
 
 - make the file executable
 
