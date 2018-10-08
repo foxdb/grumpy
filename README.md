@@ -8,31 +8,31 @@
 
 ### Create a pre-commit hook and configure git
 
-- create a hooks directory
-
 `mkdir -p ~/.git-template/hooks`
-
-- create a pre-commit file in that directory
 
 `touch ~/.git-template/hooks/pre-commit`
 
 - put the code below in the pre-commit file
-
-Point to take-picture.py in this repository
 
 ```bash
 #!/bin/bash
 python ~/grumpy/take-picture.py
 ```
 
+adapt the path to `take-picture.py` if necessary
+
 - make the file executable
 
 `chmod o+x ~/.git-templates/hooks/pre-commit`
 
-- “activate” your init dir
+- "activate" your init dir
 
-`git config --global init.templatedir ‘~/.git_template’`
+`git config --global init.templatedir "~/.git_template"`
 
-## TODO
+### adapt configuration values
 
-- Configuration variables in separate file (PICTURES_DIRECTORY, BUCKET_NAME etc...)
+- in `take-picture.py`, set PICTURES_DIRECTORY to the local folder of your choice
+
+## uploads to s3
+
+By default, `take-picture.py` will store shots on your local filesystem. You can use `s3.py` to upload your shots in an s3 bucket and remove the local version.
