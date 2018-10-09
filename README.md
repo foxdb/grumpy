@@ -31,6 +31,10 @@ python ~/grumpy/take-picture.py
 - adapt your PICTURES_DIRECTORY: in `take-picture.py`, set PICTURES_DIRECTORY to the local folder of your choice
 - **Run `git init` in your existing git repos**. The hook will kick in automatically in your new repos while they are being configured. For the existing ones, running `git init` will update the configuration.
 
-## uploads to s3
+## uploads to AWS S3
 
 By default, `take-picture.py` will store shots on your local filesystem. You can use `s3.py` to upload your shots in an s3 bucket and remove the local version.
+
+## make it a timelapse
+
+`ffmpeg -r 24 -pattern_type glob -i '*.jpg' -s hd1080 -vcodec libx264 timelapse.mp4`
