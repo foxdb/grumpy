@@ -1,6 +1,8 @@
 # grumpy
 
-## Setup
+A git hook that takes a webcam snapshot at each commit.
+
+## setup
 
 - install python requirements
 
@@ -27,7 +29,7 @@ python ~/grumpy/take-picture.py
 `git config --global init.templatedir "~/.git-template"`
 
 - adapt your PICTURES_DIRECTORY: in `take-picture.py`, set PICTURES_DIRECTORY to the local folder of your choice
-- the git hook will kick in automatically in your new repos. For the existing ones, running `git init` will update the configuration.
+- **Run `git init` in your existing git repos**. The hook will kick in automatically in your new repos while they are being configured. For the existing ones, running `git init` will update the configuration.
 
 ## uploads to s3
 
