@@ -8,6 +8,13 @@ A git hook that takes a webcam snapshot at each commit.
 
 `sudo pip install -r requirements.txt`
 
+- create a `config.ini` file and adapt the following content
+
+```ini
+[folders]
+pictures_directory=~/.gitshots
+```
+
 - create a pre-commit hook and configure git
 
 `mkdir -p ~/.git-template/hooks`

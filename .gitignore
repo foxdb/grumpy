@@ -1,5 +1,6 @@
 *.jpg
 *.mp4
+*.ini
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
