@@ -1,2 +1,2 @@
-pygame
+opencv-python
 boto3
