@@ -5,7 +5,7 @@ import ConfigParser
 from datetime import datetime
 
 config = ConfigParser.ConfigParser()
-config.read("config.ini")
+config.read(os.path.dirname(os.path.realpath(__file__)) + "/config.ini")
 
 branch_name = subprocess.check_output(
     ['git', 'status']).split('\n')[0].replace('On branch ', '').replace('/', '')
