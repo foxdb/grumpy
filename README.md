@@ -12,7 +12,7 @@ A git hook that takes a webcam snapshot at each commit.
 
 ```ini
 [folders]
-pictures_directory=~/.gitshots
+pictures_directory=/home/you/.gitshots
 ```
 
 - create a pre-commit hook and configure git
